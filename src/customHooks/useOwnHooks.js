@@ -4,7 +4,7 @@ const useOwnHooks = (url)=>{
     useEffect(()=>{
             fetch(url)
             .then((res)=> res.json())
-            .then((result)=> {{setData(result.products)}})
+            .then((result)=> {{result.products?setData(result.products):setData(result)}})
     },[])
 
     return data;
